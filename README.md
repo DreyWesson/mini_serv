@@ -6,7 +6,7 @@ This implementation describes a basic TCP server designed to manage multiple cli
 To ensure proper encapsulation and avoid using global variables, the server uses a linked-list data structure to manage client connections. This choice not only simplifies debugging and maintenance but also enhances the extensibility of the server's functionalities.
 
 ### Initialization
-The server is initialized with a port number provided as a command-line argument. It's important to ensure that the port number is within the valid range (0 < n <= 65535).
+The server is initialized with a port number provided as a command-line argument. It's important to ensure that the port number is within the valid range (0 >= n < 65535).
 
 The initServer function sets up the server's data structure, initializing various fields and preparing the file descriptor sets used by select. Key functions used in this process include bzero (or memset), which initializes our structure, and FD_ZERO, which initializes the file descriptor sets (activefds, writefds, and readfds).
 
